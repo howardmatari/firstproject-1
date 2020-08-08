@@ -1,0 +1,144 @@
+:root{
+    --mainColor: #eaeaea;
+    --secondaryColor: #fff;
+    --borderColor: #c1c1c1;
+    --mainText: black;
+    --secondaryText: #4b5156;
+    --accentColor: #17a2b8;
+    --previewShadow: #f0ead6;
+    --primaryBtn: blue;
+    --secondaryBtn: green;
+}
+
+html, body {
+    padding: 0;
+    margin: 0;
+}
+
+h1, h2, h3, h4, h5, h6, strong {
+    color: var(--mainText);
+    font-family: 'Russo One', sans-serif;
+    font-weight: 500;
+}
+
+p, li, span, label, input, textarea {
+    color: var(--secondaryText);
+    font-family: 'Roboto', sans-serif;
+}
+
+a {
+    text-decoration: none;
+    color: var(--accentColor);
+    font-family: 'Roboto', sans-serif;
+}
+
+ul {
+    list-style: none;
+}
+
+h1 {font-size: 56px;}
+h2 {font-size: 36px;}
+h3 {font-size: 28px;}
+h4 {font-size: 24px;}
+h5 {font-size: 20px;}
+h6 {font-size: 16px;}
+
+.main-container {
+    width: 1200px;
+    margin: 0 auto;
+}
+
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    width: 95%;
+    margin: 0 auto;
+}
+
+.primary-btn {
+    background: var(--primaryBtn);
+    color: white;
+    height: 40px;
+    font-size: 20px;
+    border: none;
+    padding: 0 20px;
+}
+
+.secondary-btn {
+    background: var(--secondaryBtn);
+    color: white;
+    padding: 15px 50px;
+    font-size: 20px;
+    border: none;
+    border-radius: 10px;
+    margin-top: 20px;
+}
+
+.ghost-btn {
+    background: transparent;
+    box-shadow: inset 0px 0px 0px 5px var(--primaryBtn);
+    box-sizing: border-box;
+    color: var(--primaryBtn);
+    padding: 5px 5x;
+    font-size: 20px;
+    border: none;
+    border-radius: 10px;
+    margin-top: 20px;
+}
+
+.form-wrapper {
+    display: flex;
+    justify-content: center;
+    padding-top: 200px;
+}
+
+.search-form {
+    display: flex;
+    justify-content: center;
+    width: 80%;
+}
+
+.form-input {
+    height: 40px;
+    border: none;
+    background-color: #EDEDED;
+}
+
+#interest-input {
+    width: 50%;
+}
+
+#audience-input {
+    width: 20%;
+    margin: 0 5px;
+}
+
+#form-button {
+    width: 20%;
+    border-radius: 4px;
+}
+
+.results-wrapper {
+    height: 300px;
+    background-color: lightgray;
+}
+
+.results-card {
+    width: 20%;
+    height: 300px;
+}
+
+.col-6 {
+    height: 300px;
+    background-color: lightskyblue;
+    border: black 2px solid;
+}
+
+
+
+@media screen and (max-width: 1200px) {
+    .main-container {
+        width: 95%;
+        margin: 0 auto;
+    }
+}
