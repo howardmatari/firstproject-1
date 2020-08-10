@@ -24,7 +24,7 @@ function runSearch(event) {
         for (var i=0; i<response.data.length; i++) {
             var interest = response.data[i].name;
             var audience = response.data[i].audience_size;
-            //var id = response.data[i].id;
+            var id = response.data[i].id;
             
             console.log(interest)
 
@@ -40,7 +40,7 @@ function runSearch(event) {
             $(".results-wrapper").append(resultsCard);
             resultsCard.append(resultsInterest);
             resultsCard.append(resultsAudience);
-            
+            resultsCard.append(id);
 
             var saveBtn = $("<button>");
             saveBtn.addClass("save-btn ghost-btn");
@@ -48,12 +48,14 @@ function runSearch(event) {
             resultsCard.append(saveBtn);
         
             function saveCard (){
-                var savedCard = $(resultsCard).appendTo("#interests-saved");
+                //var savedCard = 
+                $(resultsCard).appendTo("#interests-saved");
             }
              $(saveBtn).click(function(event) {
                  saveCard();
                 $(resultsCard).text();
                 localStorage.setItem("resultsCard", resultsCard);
+                localStorage.getItem("resultsCard", resultsCard);
                 
             }) 
          
