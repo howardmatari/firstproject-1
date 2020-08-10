@@ -1,5 +1,4 @@
-var userSearch = $("#interest-input").val();
-
+var userSearch;
 // create if/then statement for the audience size
 var userDropdown = $("#audience-input");
 
@@ -8,13 +7,9 @@ function runSearch(event) {
     userSearch = $("#interest-input").val();
     console.log(userSearch);
 
-var api = "EAAHZAICQklrQBALIZBr9gHclFRO0Tpb9ZBp220iyYKLaH85i4ELRYRERCVHDZAZA2wtyWsrlN21ayvQuDJvqoxoFZBBDyjqlagZCSLxxdZCWJYxyq486seSZCnMhTVRZAxjV8llZBij3lK6Qpi5sruapZCZAZB6MllDlcdSZCT4lqh7L7ZBRgHwZChUjNwgjn2YiZAI6r9GeeVpUINNkeCWRfU90Cu3KPJ";
-var queryURL = "https://graph.facebook.com/search?type=adinterest&q=" + userSearch + "&limit=1000000&locale=en_US&access_token=" + api;
-
-$("#form-button").click(function(event) {
-    event.preventDefault();
-    console.log("button clicked")
-
+    var api = "EAAI0U589Q8gBALMnoZAyiUmp6nq6VlaZBdeLjG2aFdtK0F9l2eyOQoOPtk0NCjcPBAL4djPlZAaZAe5LZCCSvjVbva5C0tam8YGzgu0ZBmI4d0mQc0RqaFakCfJ4rV19lYhWdHLRWCxbl7edktVxZBLjnUkQbaz7lUzTVjLFccY7NKSEv4eWvcUkXdfQNx4NdcHPeteobTydgkTQCSkrvazI7eJldc95eSPX23kf4PExwZDZD";
+    var queryURL = "https://graph.facebook.com/search?type=adinterest&q=[" + userSearch + "_]&limit=1000000&locale=en_US&access_token=" + api;
+    
     console.log(queryURL)
 
     $.ajax({
@@ -29,7 +24,8 @@ $("#form-button").click(function(event) {
         for (var i=0; i<response.data.length; i++) {
             var interest = response.data[i].name;
             var audience = response.data[i].audience_size;
-    
+            var id = response.data[i].id;
+            
             console.log(interest)
 
             var resultsCard = $("<div>");
@@ -44,13 +40,31 @@ $("#form-button").click(function(event) {
             $(".results-wrapper").append(resultsCard);
             resultsCard.append(resultsInterest);
             resultsCard.append(resultsAudience);
+            resultsCard.append(id);
 
             var saveBtn = $("<button>");
             saveBtn.addClass("save-btn ghost-btn");
             saveBtn.text("Save");
             resultsCard.append(saveBtn);
+        
+            function saveCard (){
+                //var savedCard = 
+                $(resultsCard).appendTo("#interests-saved");
+            }
+             $(saveBtn).click(function(event) {
+                 saveCard();
+                $(resultsCard).text();
+                localStorage.setItem("resultsCard", resultsCard);
+                localStorage.getItem("resultsCard", resultsCard);
+                
+            }) 
+         
         }
     })
+
+    
+    
 }
 
 $(".search-form").on("submit", runSearch)
+
