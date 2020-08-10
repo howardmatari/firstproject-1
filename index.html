@@ -26,9 +26,15 @@
     <section class="search-section">
         <div class="container-fluid">
             <div class="form-wrapper">
-                <form action="" class="search-form">
-                    <input type="text" class="form-input" id="interest-input" placeholder="Type your interest">
-                    <input type="text" class="form-input" id="audience-input">
+                <form  action="" class="search-form">
+                    <input model="intrest" type="text" class="form-input" id="interest-input" placeholder="Type your interest">
+                    <select class="form-input" id="audience-input">
+                        <option value="1">0-50000</option>
+                        <option value="2">51000-100000</option>
+                        <option value="3">100001-500000</option>
+                        <option value="4">500001-1000000</option>
+                        <option value="5">1000001-2000000</option>
+                    </select>
                     <button type="submit" class="primary-btn" id="form-button">Submit</button>
                 </form>
             </div>

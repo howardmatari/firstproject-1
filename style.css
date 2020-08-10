@@ -139,6 +139,11 @@ h6 {font-size: 16px;}
     border: black 2px solid;
 }
 
+#audience-input:hover{
+    background-color: aqua;
+    opacity: 0.5
+}
+
 
 
 @media screen and (max-width: 1200px) {
