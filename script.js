@@ -21,8 +21,9 @@ $('#form-button').click(function(event) {
           const audience = response.data[i].audience_size;
           let breakpoint = $('#audience-input').val();
           console.log(breakpoint);
-
-          if (breakpoint == 1 && parseInt(audience) <= 50000) {
+          if (breakpoint == 0) {
+            appendResults(interest, audience, i);
+          } else if (breakpoint == 1 && parseInt(audience) <= 50000) {
             appendResults(interest, audience, i);
           } else if (breakpoint == 2 && parseInt(audience) <= 100000 && parseInt(audience) > 50000) {
             appendResults(interest, audience, i);
