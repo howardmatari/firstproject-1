@@ -40,6 +40,10 @@ $('#form-button').click(function(event) {
     const resultsCard = $('<div>').addClass('card results-card').attr('data-general', i);
     const resultsInterest = $('<div>').addClass('results-interest').text(interest).attr('id', 'interest' + i);
     const resultsAudience = $('<div>').addClass('results-Audience').text(audience).attr('id', 'audience' + i);
+    $("<div>")
+    var resultsSearch = $("<div>").attr("query", userSearch).addClass("results-query")
+    resultsCard.append(resultsSearch);
+
 
     $('.results-wrapper').append(resultsCard);
     resultsCard.append(resultsInterest).append(resultsAudience);
@@ -51,6 +55,8 @@ $('#form-button').click(function(event) {
 
 $(document).on('click', '.save-btn', function(event) {
   let parentClone = $(this).parent().clone();
+  var query=parentClone.find(".results-query").attr("query")
+  parentClone.append("User Search For " + query)
   $('.saved-interests').append(parentClone);
   $('.saved-interests .save-btn').remove();
 });
