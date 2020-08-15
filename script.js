@@ -39,9 +39,9 @@ $('#form-button').click(function(event) {
   console.log(userSearch);
   const api = '929839847518989|KM6oRCTNsGmWUQahjuHZ5LON_nI';
   const queryURL = 'https://graph.facebook.com/search?type=adinterest&q=' + userSearch + '&limit=1000000&locale=en_US&access_token=' + api;
-  $('.populate-results').empty();
+  $('.results-wrapper').empty();
 
-  // $('.populate-results') append a loading spinner here
+  // $('.results-wrapper') append a loading spinner here
 
   $.ajax({
     url: queryURL,
@@ -49,7 +49,7 @@ $('#form-button').click(function(event) {
   })
       .then(function(response) {
         console.log(response);
-        $('.populate-results').empty();
+        $('.results-wrapper').empty();
 
         let queryIMGURL = 'https://api.unsplash.com/search/photos/?client_id=qL8izIA9NEwSW6c6h088pXUYyaki-T-0UoSqu_v74ro&page=1&per_page=1&query=' + userSearch;
         $.ajax({
@@ -85,14 +85,18 @@ $('#form-button').click(function(event) {
       });
 
   function appendResults(interest, audience, i) {
+    const resultsWrapper = $('<div>').addClass('ui link cards')
     const resultsCard = $('<div>').addClass('card results-card').attr('data-general', i);
+
     const resultsInterest = $('<div>').addClass('results-interest').text(interest).attr('id', interest);
     const resultsAudience = $('<div>').addClass('results-Audience').text('Audience size: ' + audience).attr('id', audience);
 
-    $('.populate-results').append(resultsCard);
-    resultsCard.append(resultsInterest).append(resultsAudience);// append new div here;
+    $('.results-wrapper').append(resultsWrapper);
+    resultsWrapper.append(resultsCard);
+    resultsCard.append(resultsInterest).append(resultsAudience);
 
-    const saveBtn = $('<button>').addClass('save-btn ghost-btn').attr('value', 'save-btn').text('Save');
+    const saveBtn = $('<button>').addClass('save-btn').text('Save');
+
     resultsCard.append(saveBtn);
   }
 });

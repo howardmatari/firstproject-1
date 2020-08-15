@@ -1,12 +1,13 @@
 :root{
     --mainColor: #eaeaea;
     --secondaryColor: #fff;
+    --tertiaryColor: #BDBDBD;
     --borderColor: #c1c1c1;
     --mainText: black;
     --secondaryText: #4b5156;
     --accentColor: #17a2b8;
     --previewShadow: #f0ead6;
-    --primaryBtn: blue;
+    --primaryBtn: #3B5998;
     --secondaryBtn: green;
 }
 
@@ -17,8 +18,11 @@ html, body {
 
 h1, h2, h3, h4, h5, h6, strong {
     color: var(--mainText);
-    font-family: 'Russo One', sans-serif;
+    font-family: 'Poppins', sans-serif;
     font-weight: 500;
+    margin: 0;
+    padding: 0;
+    line-height: 1;
 }
 
 p, li, span, label, input, textarea {
@@ -36,23 +40,21 @@ ul {
     list-style: none;
 }
 
-h1 {font-size: 56px;}
-h2 {font-size: 36px;}
-h3 {font-size: 28px;}
+h1 {font-size: 60px; color: var(--secondaryColor)}
+h2 {font-size: 40px; color: var(--tertiaryColor);}
+h3 {font-size: 30px;}
 h4 {font-size: 24px;}
 h5 {font-size: 20px;}
 h6 {font-size: 16px;}
 
-.main-container {
-    width: 1200px;
-    margin: 0 auto;
+h2:last-child {
+    margin: 10px 0 60px 0;
 }
 
-.navbar {
-    display: flex;
-    justify-content: space-between;
-    width: 95%;
+.main-container {
+    width: 1400px;
     margin: 0 auto;
+    padding: 0;
 }
 
 .primary-btn {
@@ -62,6 +64,14 @@ h6 {font-size: 16px;}
     font-size: 20px;
     border: none;
     padding: 0 20px;
+}
+
+.primary-btn:focus {
+    outline: none;
+}
+
+.primary-btn:active {
+    background-color: #23355b;
 }
 
 .secondary-btn {
@@ -74,16 +84,65 @@ h6 {font-size: 16px;}
     margin-top: 20px;
 }
 
-.ghost-btn {
+.save-btn {
+    background-color: var(--primaryBtn);
+    color: white;
+    box-shadow: inset 0px 0px 0px 5px var(--primaryBtn);
+    box-sizing: border-box;
+    padding: 5px 5x;
+    font-size: 30px;
+    border: none;
+    border-radius: 20px !important;
+    margin-top: 20px;
+    width: 167px;
+}
+
+.save-btn:focus {
+    outline: none;
+}
+
+.save-btn:active {
+    background-color: #23355b;
+}
+
+.ui.card>:last-child, .ui.cards>.card>:last-child {
+    border-radius: 0;
+}
+
+.delete-btn {
     background: transparent;
     box-shadow: inset 0px 0px 0px 5px var(--primaryBtn);
     box-sizing: border-box;
     color: var(--primaryBtn);
     padding: 5px 5x;
-    font-size: 20px;
+    font-size: 30px;
     border: none;
     border-radius: 10px;
     margin-top: 20px;
+    width: 167px;
+}
+
+.ui.cards>.card {
+    padding: 30px;
+}
+
+.hero-section {
+    height: 800px;
+    background-image: url(/assets/facebook-interest-finder-hero-image.png);
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    width: 95%;
+    margin: 0 auto;
+}
+
+.header-text {
+    text-align: center;
+    padding-top: 430px;
 }
 .explain{
     display: flex;
@@ -94,58 +153,100 @@ h6 {font-size: 16px;}
 .form-wrapper {
     display: flex;
     justify-content: center;
-    padding-top: 100px;
 }
 
 .search-form {
     display: flex;
     justify-content: center;
-    width: 80%;
+    width: 100%;
+    margin-bottom: 100px;
 }
 
 .form-input {
     height: 40px;
     border: none;
     background-color: #EDEDED;
+    height: 60px;
+    font-size: 30px;
+    padding-left: 20px;
+    border-radius: 8px;
+    outline: none;
 }
 
 #interest-input {
-    width: 50%;
+    width: 530px;
 }
 
 #audience-input {
     width: 20%;
     margin: 0 5px;
+    margin: 0 20px;
 }
 
 #form-button {
     width: 20%;
     border-radius: 4px;
+    height: 60px;
+    border-radius: 8px;
+}
+
+#search-icon {
+    width: 30px;
+}
+
+.results-section {
+    height: auto;
+    padding-top: 100px;
+}
+
+.results-heading {
+    padding-bottom: 50px;
 }
 
 .results-wrapper {
-    height: 300px;
-    background-color: lightgray;
-    
+
+    height: 400px;
+    background-color: #f7f7f7;
+    display: flex;
+    flex-wrap: nowrap; 
+    overflow: auto;
+
 }
 
 .results-card {
-    width: 20%;
-    height: 250px;
+    width: 200px;
+    height: 300px;
+
     flex: 0 0 auto;
-    margin-right: 3px;
+    margin-right: 50px;
+}
+
+.results-interest {
+    font-size: 30px;
+}
+
+.results-audience {
+    font-size: 30px;
+}
+
+.ui.cards {
+    margin: 0px;
+    padding: 20px;
+}
+
+.ui.cards~.ui.cards {
+    margin-top: 0;
+}
+
+.additional-info {
+    padding: 50px 0 0 15px;
 }
 
 .interest-wrapper {
     height: 350px;
-    background-color: lightskyblue;
-    border: black 2px solid;
+    background-color: #f7f7f7;
 }
 
-#audience-input:hover{
-    background-color: aqua;
-    opacity: 0.5
-}
 
 .saved-interests{
     display: flex;
@@ -156,6 +257,11 @@ h6 {font-size: 16px;}
     display: flex;
     flex-wrap: nowrap; 
     overflow: auto;
+}
+
+.footer-section {
+    background-color: var(--primaryBtn);
+    height: 200px;
 }
 
 @media screen and (max-width: 1200px) {
