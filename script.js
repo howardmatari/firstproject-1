@@ -60,7 +60,7 @@ $('#form-button').click(function(event) {
                 console.log(response);
                 testImg = response.results[0].urls.small;
                 // savedImg = response.results[0].urls.small;
-                $('#testImg').attr('src', testImg);
+                $('.hero-section').css('background-image', 'url(' + testImg + ')');
                 return testImg;
             });
 
