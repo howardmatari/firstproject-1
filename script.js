@@ -37,14 +37,17 @@ $('#form-button').click(function(event) {
         };
       });
   function appendResults(interest, audience, i) {
+    const resultsWrapper = $('<div>').addClass('ui link cards')
     const resultsCard = $('<div>').addClass('card results-card').attr('data-general', i);
     const resultsInterest = $('<div>').addClass('results-interest').text(interest).attr('id', 'interest' + i);
-    const resultsAudience = $('<div>').addClass('results-Audience').text(audience).attr('id', 'audience' + i);
+    const resultsAudience = $('<div>').addClass('results-audience').text(audience).attr('id', 'audience' + i);
 
-    $('.results-wrapper').append(resultsCard);
+
+    $('.results-wrapper').append(resultsWrapper);
+    resultsWrapper.append(resultsCard);
     resultsCard.append(resultsInterest).append(resultsAudience);
 
-    const saveBtn = $('<button>').addClass('save-btn ghost-btn').text('Save');
+    const saveBtn = $('<button>').addClass('save-btn').text('Save');
     resultsCard.append(saveBtn);
   }
 });

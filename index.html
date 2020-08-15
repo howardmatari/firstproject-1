@@ -7,27 +7,32 @@
     <meta name="description" content="Enter the description of this page">
     <meta name="author" content="Enter the author name">
     <title>Document</title>
-
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.2.13/semantic.min.css">
     <script src="https://kit.fontawesome.com/b39ec8f122.js" crossorigin="anonymous"></script>
     <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,500;0,600;1,400;1,500;1,600&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.1/css/bootstrap.min.css" integrity="sha384-VCmXjywReHh4PwowAiWNagnWcLhlEJLA5buUprzK8rxFgeH0kww/aWY76TfkUoSX" crossorigin="anonymous">
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <nav class="navbar">
-        <div class="logo-wrapper">
-            Logo
-        </div>
-        <div class="menu-wrapper">
-            Menu
-        </div>
-    </nav>
+    <section class="hero-section">
 
-    <section class="search-section">
-        <div class="container-fluid">
+        <nav class="navbar">
+            <div class="logo-wrapper">
+                Logo
+            </div>
+            <div class="menu-wrapper">
+                Login
+            </div>
+        </nav>
+
+        <div class="main-container">
+            <div class="header-text">
+                <h1>Facebook Hidden Audience Finder</h1>
+                <h2>Built for digital marketers by digital marketers.</h2>
+            </div>
             <div class="form-wrapper">
                 <form  action="" class="search-form">
-                    <input model="intrest" type="text" class="form-input" id="interest-input" placeholder="Type your interest">
+                    <input model="interest" type="text" class="form-input" id="interest-input" placeholder="Enter your interest...">
                     <select class="form-input" id="audience-input">
                         <option value="0">All</option>
                         <option value="1">0-50000</option>
@@ -36,7 +41,7 @@
                         <option value="4">500001-1000000</option>
                         <option value="5">1000001-2000000</option>
                     </select>
-                    <button type="submit" class="primary-btn" id="form-button">Submit</button>
+                    <button type="submit" class="primary-btn" id="form-button"><img src="/assets/search-icon.png" alt="search icon" id="search-icon"></button>
                 </form>
             </div>
         </div>
@@ -45,20 +50,15 @@
     <section class="results-section">
         <div class="container-fluid">
             <div class="row">
+                <div class="col-12 results-heading">
+                    <h3>Populated Interests:</h3>
+                </div>       
+
+            </div>
+            <div class="row">
                 <div class="col-12">
                     <div class="results-wrapper">
-                        <!-- <div class="card results-card">
-                            <div class="results-img">
-                                <img src="" alt="">
-                            </div>
-                            <div class="results-interest">
-                                 Interest
-                            </div>
-                            <div class="results-audience">
-                                1 Million
-                            </div>
-                            <button class="save-btn ghost-btn">Save</button>
-                        </div> -->
+
                     </div>
                 </div>
             </div>
@@ -68,16 +68,25 @@
     <section class="additional-info">
         <div class="container-fluid">
             <div class="row">
+                <div class="col-12 result-heading">
+                    <h3>Saved Interests:</h3>
+                </div>
+            </div>
+            <div class="row">
                 <div class="col-12 interest-wrapper">
                     <div class="row">
-                        Saved Interests
-                    </div>
-                    <div class="saved-interests">
+                        <div class="col-12">
+                            <div class="saved-interests"></div> 
+                        </div>
                     </div>
                 </div>
             </div>
         </div>
     </section>
+
+    <footer class="footer-section">
+
+    </footer>
 
 
     
@@ -88,6 +97,7 @@
     <script src="script.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.1/js/bootstrap.min.js" integrity="sha384-XEerZL0cuoUbHE4nZReLT7nx9gQrQreJekYhJD9WNWhH8nEW+0c5qq7aIo2Wl30J" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.2.13/semantic.min.js"></script>
   </body>
 </body>
 </html>
