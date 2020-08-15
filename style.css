@@ -144,6 +144,11 @@ h2:last-child {
     text-align: center;
     padding-top: 430px;
 }
+.explain{
+    display: flex;
+    justify-content: center;
+    padding-top: 100px;
+}
 
 .form-wrapper {
     display: flex;
@@ -199,6 +204,7 @@ h2:last-child {
 }
 
 .results-wrapper {
+
     height: 400px;
     background-color: #f7f7f7;
     display: flex;
@@ -210,6 +216,7 @@ h2:last-child {
 .results-card {
     width: 200px;
     height: 300px;
+
     flex: 0 0 auto;
     margin-right: 50px;
 }
@@ -242,6 +249,11 @@ h2:last-child {
 
 
 .saved-interests{
+    display: flex;
+    flex-wrap: nowrap; 
+    overflow: auto;
+}
+.populate-results {
     display: flex;
     flex-wrap: nowrap; 
     overflow: auto;
