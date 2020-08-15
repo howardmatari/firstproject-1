@@ -1,3 +1,4 @@
+/* eslint-disable no-invalid-this */
 /* eslint-disable indent */
 /* eslint-disable prefer-const */
 let userSearch = '';
@@ -58,8 +59,8 @@ $('#form-button').click(function(event) {
         })
             .then(function(response) {
                 console.log(response);
-                testImg = response.results[0].urls.small;
-                // savedImg = response.results[0].urls.small;
+                testImg = response.results[0].urls.full;
+                // savedImg = response.results[0].urls.full;
                 $('.hero-section').css('background-image', 'url(' + testImg + ')');
                 return testImg;
             });
