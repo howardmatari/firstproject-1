@@ -252,6 +252,9 @@ h2:last-child {
 .interest-wrapper {
     height: 350px;
     background-color: #f7f7f7;
+    display: flex;
+    flex-wrap: nowrap; 
+    overflow: auto;
 }
 
 .saved-interests{
@@ -259,10 +262,23 @@ h2:last-child {
     flex-wrap: nowrap; 
     overflow: auto;
 }
+
 .populate-results {
     display: flex;
     flex-wrap: nowrap; 
     overflow: auto;
+}
+
+.saved-interest {
+    font-size: 25px;
+}
+
+.saved-audience {
+    font-size: 15px;
+}
+
+.saved-search {
+    font-size: 15px;
 }
 
 .footer-section {

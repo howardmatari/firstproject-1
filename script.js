@@ -21,15 +21,15 @@ function checkLocalStorage() {
 function renderHistory() {
   $('.saved-interests').empty();
   for (let i = 0; i < savedInterests.length; i++) {
-    const savedCardDiv = $('<div>').addClass('card saved-card');
+    const savedCardDiv = $('<div>').addClass('ui link cards card');
     const savedInterestsDiv = $('<div>').addClass('saved-interest').text(savedInterests[i]);
     const savedAudienceDiv = $('<div>').addClass('saved-audience').text('Audience size: ' + savedAudience[i]);
-    const savedSearchDiv = $('<div>').addClass('saved-search').text(savedSearch[i]);
+    const savedSearchDiv = $('<div>').addClass('saved-search').text('Term Searched: ' + savedSearch[i]);
 
     $('.saved-interests').append(savedCardDiv);
     savedCardDiv.append(savedInterestsDiv).append(savedAudienceDiv).append(savedSearchDiv);
 
-    const delBtn = $('<button>').addClass('del-btn ghost-btn').text('Delete').attr('id', i);
+    const delBtn = $('<button>').addClass('delete-btn ').text('Delete').attr('id', i);
     savedCardDiv.append(delBtn);
   }
 }
@@ -148,7 +148,7 @@ $(document).on('click', '.save-btn', function(event) {
   renderHistory();
 });
 
-$(document).on('click', '.del-btn', function(event) {
+$(document).on('click', '.delete-btn', function(event) {
 let delId = this.id;
 savedInterests.splice(delId, 1);
 savedAudience.splice(delId, 1);
