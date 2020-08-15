@@ -21,7 +21,7 @@ function checkLocalStorage() {
 function renderHistory() {
   $('.saved-interests').empty();
   for (let i = 0; i < savedInterests.length; i++) {
-    const savedCardDiv = $('<div>').addClass('ui link cards card');
+    const savedCardDiv = $('<div>').addClass('ui link cards card saved-card');
     const savedInterestsDiv = $('<div>').addClass('saved-interest').text(savedInterests[i]);
     const savedAudienceDiv = $('<div>').addClass('saved-audience').text('Audience size: ' + savedAudience[i]);
     const savedSearchDiv = $('<div>').addClass('saved-search').text('Term Searched: ' + savedSearch[i]);
