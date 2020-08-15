@@ -128,7 +128,7 @@ h2:last-child {
 
 .hero-section {
     height: 800px;
-    background-image: url(/assets/facebook-interest-finder-hero-image.png);
+    background-image: url(assets/facebook-interest-finder-hero-image.png);
     background-repeat: no-repeat;
     background-size: cover;
 }

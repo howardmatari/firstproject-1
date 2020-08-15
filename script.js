@@ -1,10 +1,11 @@
+/* eslint-disable no-invalid-this */
 /* eslint-disable indent */
 /* eslint-disable prefer-const */
 let userSearch = '';
 let savedInterests = [];
 let savedAudience = [];
 let savedSearch = [];
-let savedImg = [];
+// let savedImg = [];
 let testImg = '';
 
 function checkLocalStorage() {
@@ -58,9 +59,9 @@ $('#form-button').click(function(event) {
         })
             .then(function(response) {
                 console.log(response);
-                testImg = response.results[0].urls.small;
-                // savedImg = response.results[0].urls.small;
-                $('#testImg').attr('src', testImg);
+                testImg = response.results[0].urls.full;
+                // savedImg = response.results[0].urls.full;
+                $('.hero-section').css('background-image', 'url(' + testImg + ')');
                 return testImg;
             });
 
@@ -85,7 +86,7 @@ $('#form-button').click(function(event) {
       });
 
   function appendResults(interest, audience, i) {
-    const resultsWrapper = $('<div>').addClass('ui link cards')
+    const resultsWrapper = $('<div>').addClass('ui link cards');
     const resultsCard = $('<div>').addClass('card results-card').attr('data-general', i);
 
     const resultsInterest = $('<div>').addClass('results-interest').text(interest).attr('id', interest);
