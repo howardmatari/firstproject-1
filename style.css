@@ -94,6 +94,9 @@ h2:last-child {
     border: none;
     margin-top: 20px;
     width: 167px;
+    position: absolute;
+    bottom: 15px;
+    right: 15px;
 }
 
 .save-btn:focus {
@@ -123,6 +126,9 @@ h2:last-child {
     border-radius: 10px;
     margin-top: 20px;
     width: 167px;
+    position: absolute;
+    bottom: 15px;
+    right: 15px;
 }
 
 .ui.cards>.card {
@@ -147,6 +153,7 @@ h2:last-child {
     text-align: center;
     padding-top: 430px;
 }
+
 .explain{
     display: flex;
     justify-content: center;
@@ -199,16 +206,16 @@ h2:last-child {
 
 .results-section {
     height: auto;
-    padding-top: 100px;
+    padding-top: 50px;
 }
 
-.results-heading {
-    padding-bottom: 50px;
+.result-heading {
+    padding: 50px 0 0 0;
+    margin-bottom: 50px;
 }
 
 .results-wrapper {
-
-    height: 400px;
+    height: 380px;
     background-color: #f7f7f7;
     display: flex;
     flex-wrap: nowrap; 
@@ -223,9 +230,9 @@ h2:last-child {
 .results-card {
     width: 200px;
     height: 300px;
-
     flex: 0 0 auto;
     margin-right: 50px;
+    position: absolute;
 }
 
 .results-interest {
@@ -250,17 +257,19 @@ h2:last-child {
 }
 
 .interest-wrapper {
-    height: 350px;
+    height: 380px;
     background-color: #f7f7f7;
     display: flex;
     flex-wrap: nowrap; 
     overflow: auto;
+    margin-bottom: 100px;
 }
 
 .saved-interests{
     display: flex;
     flex-wrap: nowrap; 
     overflow: auto;
+    padding: 15px;
 }
 
 .populate-results {
@@ -279,6 +288,12 @@ h2:last-child {
 
 .saved-search {
     font-size: 15px;
+}
+
+.saved-card {
+    margin: 15px 50px 0 0 !important;
+    width: 200px;
+    height: 300px;
 }
 
 .footer-section {
