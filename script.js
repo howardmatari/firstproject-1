@@ -4,6 +4,7 @@ let userSearch = '';
 let savedInterests = [];
 let savedAudience = [];
 let savedSearch = [];
+let savedImg = [];
 let testImg = '';
 
 function checkLocalStorage() {
@@ -12,6 +13,7 @@ function checkLocalStorage() {
     savedInterests = JSON.parse(localStorage.getItem('savedInterestsKey'));
     savedAudience = JSON.parse(localStorage.getItem('savedAudienceKey'));
     savedSearch = JSON.parse(localStorage.getItem('savedSearchKey'));
+    // savedImg = JSON.parse(localStorage.getItem('savedImgKey'));
   }
 }
 
@@ -26,7 +28,7 @@ function renderHistory() {
     $('.saved-interests').append(savedCardDiv);
     savedCardDiv.append(savedInterestsDiv).append(savedAudienceDiv).append(savedSearchDiv);
 
-    const delBtn = $('<button>').addClass('save-btn ghost-btn').text('Delete');
+    const delBtn = $('<button>').addClass('del-btn ghost-btn').text('Delete').attr('id', i);
     savedCardDiv.append(delBtn);
   }
 }
@@ -57,6 +59,7 @@ $('#form-button').click(function(event) {
             .then(function(response) {
                 console.log(response);
                 testImg = response.results[0].urls.small;
+                // savedImg = response.results[0].urls.small;
                 $('#testImg').attr('src', testImg);
                 return testImg;
             });
@@ -94,37 +97,50 @@ $('#form-button').click(function(event) {
   }
 });
 
-// function nameCheck(event) {
-//   for (let i = 0; i < savedInterests.length; i++) {
-//     if (firstCheck == savedInterests[i]) {
-//       savedInterests.splice(i, 1);
-//     }
-//   }
-//   savedInterests.unshift(firstCheck);
-// }
+function nameCheck(savedInterests, firstCheck) {
+  for (let i = 0; i < savedInterests.length; i++) {
+    if (firstCheck == savedInterests[i]) {
+      savedInterests.splice(i, 1);
+      savedAudience.splice(i, 1);
+      savedSearch.splice(i, 1);
+      // savedImg.splice(i, 1);
+    }
+  }
+}
 
 $(document).on('click', '.save-btn', function(event) {
   console.log(this.parentElement.children[0].id);
   let firstCheck = this.parentElement.children[0].id;
+
+  nameCheck(savedInterests, firstCheck);
+
   savedInterests.push(firstCheck);
   console.log(this.parentElement.children[1].id);
   let secondChild = this.parentElement.children[1].id;
   savedAudience.push(secondChild);
   console.log(userSearch);
   savedSearch.push(userSearch);
-  // nameCheck(firstCheck);
 
   localStorage.setItem('savedInterestsKey', JSON.stringify(savedInterests));
   localStorage.setItem('savedAudienceKey', JSON.stringify(savedAudience));
   localStorage.setItem('savedSearchKey', JSON.stringify(savedSearch));
+  // localStorage.setItem('savedImgKey', JSON.stringify(savedImg));
 
   renderHistory();
-  // }
-  // let parentClone = $(this).parent().clone();
-  // $('.saved-interests').append(parentClone);
-  // $('.saved-interests .save-btn').remove();
 });
 
+$(document).on('click', '.del-btn', function(event) {
+let delId = this.id;
+savedInterests.splice(delId, 1);
+savedAudience.splice(delId, 1);
+savedSearch.splice(delId, 1);
+// savedImg.splice(delId, 1); giving me a not a function error
+localStorage.setItem('savedInterestsKey', JSON.stringify(savedInterests));
+localStorage.setItem('savedAudienceKey', JSON.stringify(savedAudience));
+localStorage.setItem('savedSearchKey', JSON.stringify(savedSearch));
+// localStorage.setItem('savedImgKey', JSON.stringify(savedImg));
+renderHistory();
+});
 
 checkLocalStorage();
 renderHistory();
