@@ -34,13 +34,27 @@ function renderHistory() {
   }
 }
 
+function showLoader() {
+  const loaderWrapper = $('<div>').addClass('loader');
+  const segment = $('<div>').addClass('ui segment');
+  const dimmer = $('<div>').addClass('ui active dimmer');
+  const loader = $('<div>').addClass('ui text loader').text("Loading...");
+
+  loader.appendTo(dimmer);
+  dimmer.appendTo(segment);
+  segment.appendTo(loaderWrapper);
+  $('.results-wrapper').append(loaderWrapper);
+}
+
 $('#form-button').click(function(event) {
   event.preventDefault();
+  $('.results-wrapper').empty();
+  showLoader();
+
   userSearch = $('#interest-input').val();
   console.log(userSearch);
   const api = '929839847518989|KM6oRCTNsGmWUQahjuHZ5LON_nI';
   const queryURL = 'https://graph.facebook.com/search?type=adinterest&q=' + userSearch + '&limit=1000000&locale=en_US&access_token=' + api;
-  $('.results-wrapper').empty();
 
   // $('.results-wrapper') append a loading spinner here
 
@@ -149,16 +163,3 @@ renderHistory();
 
 checkLocalStorage();
 renderHistory();
-
-
-// "https://api.unsplash.com/search/photos/?client_id=qL8izIA9NEwSW6c6h088pXUYyaki-T-0UoSqu_v74ro&page=1&per_page=1&query=" + interest[i]
-
-// query unsplash chris
-// add imgs chris
-// add delete btn to interest card chris
-// use modal to display error chris
-// change to other css library (semantic ui) micheal
-// add keyword used to search term to interest card matari
-// local storage save and load chris
-// add explenation paragraph to top for users mark
-// loading spinner mark

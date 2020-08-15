@@ -92,7 +92,6 @@ h2:last-child {
     padding: 5px 5x;
     font-size: 30px;
     border: none;
-    border-radius: 20px !important;
     margin-top: 20px;
     width: 167px;
 }
@@ -105,8 +104,12 @@ h2:last-child {
     background-color: #23355b;
 }
 
+.hidden {
+    display: none;
+}
+
 .ui.card>:last-child, .ui.cards>.card>:last-child {
-    border-radius: 0;
+    border-radius: 20px !important;
 }
 
 .delete-btn {
@@ -210,7 +213,11 @@ h2:last-child {
     display: flex;
     flex-wrap: nowrap; 
     overflow: auto;
+}
 
+.ui.dimmer {
+    width: 100vw;
+    height: 380px;
 }
 
 .results-card {
@@ -246,7 +253,6 @@ h2:last-child {
     height: 350px;
     background-color: #f7f7f7;
 }
-
 
 .saved-interests{
     display: flex;
