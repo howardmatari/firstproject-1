@@ -102,7 +102,6 @@ $('#form-button').click(function(event) {
   function appendResults(interest, audience, i) {
     const resultsWrapper = $('<div>').addClass('ui link cards');
     const resultsCard = $('<div>').addClass('card results-card').attr('data-general', i);
-
     const resultsInterest = $('<div>').addClass('results-interest').text(interest).attr('id', interest);
     const resultsAudience = $('<div>').addClass('results-Audience').text('Audience size: ' + audience).attr('id', audience);
 
