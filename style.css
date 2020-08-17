@@ -72,6 +72,7 @@ h2:last-child {
 
 .primary-btn:active {
     background-color: #23355b;
+    transition: ease 500ms;
 }
 
 .secondary-btn {
@@ -105,6 +106,7 @@ h2:last-child {
 
 .save-btn:active {
     background-color: #23355b;
+    transition: ease 500ms;
 }
 
 .hidden {
@@ -131,12 +133,22 @@ h2:last-child {
     right: 15px;
 }
 
+.delete-btn:focus {
+    outline: none;
+}
+
+.delete-btn:active {
+    background-color:#23355b;
+    color: white;
+    transition: ease 500ms;
+}
+
 .ui.cards>.card {
     padding: 30px;
 }
 
 .hero-section {
-    height: 800px;
+    height: 600px;
     background-image: url(assets/facebook-interest-finder-hero-image.png);
     background-repeat: no-repeat;
     background-size: cover;
@@ -147,17 +159,21 @@ h2:last-child {
     justify-content: space-between;
     width: 95%;
     margin: 0 auto;
+    padding-top: 20px;
+}
+
+.login-wrapper {
+    color: #EDEDED;
+    font-size: 25px;
+}
+
+.fa-user {
+    padding-left: 10px;
 }
 
 .header-text {
     text-align: center;
-    padding-top: 430px;
-}
-
-.explain{
-    display: flex;
-    justify-content: center;
-    padding-top: 100px;
+    padding-top: 200px;
 }
 
 .form-wrapper {
@@ -299,11 +315,101 @@ h2:last-child {
 .footer-section {
     background-color: var(--primaryBtn);
     height: 200px;
+    color: white;
+    
+}
+
+.social-container {
+    display: flex;
+    margin: 20px;
+    height: 70%;
+    justify-content: center;
+    align-items: center;
+}
+
+.social-wrapper {
+    margin: 10px;
+}
+
+.social-icon {
+    font-size: 50px;
+    margin: 0px 10px;
+    color: white;
+}
+
+.footer-link-wrapper {
+    display: flex;
+    margin: 5px;
+    height: 20%;
+    background-color: #23355b;
+    margin: 0px;
+    width: 100%;
+    justify-content: center;
+    align-items: center;
+}
+
+.footer-links {
+    margin: 0px 10px;
+    color: white;
 }
 
 @media screen and (max-width: 1200px) {
     .main-container {
         width: 95%;
         margin: 0 auto;
+    }
+}
+
+@media screen and (max-width: 1085px) {
+    .hero-section {
+        height: 600px;
+    }
+
+    .header-text {
+        padding-top: 200px;
+    }
+
+    h1 {
+        font-size: 50px;
+    }
+
+    h2{
+        font-size: 30px;
+    }
+}
+
+@media screen and (max-width: 1000px) {
+    #interest-input {
+        width: 100%;
+    }
+
+    #audience-input {
+        width: 100%;
+    }
+}
+
+@media screen and (max-width: 1000px) {
+    .hero-section {
+        height: 400px;
+    }
+
+    .header-text {
+        padding-top: 50px;
+    }
+
+    h1 {
+        font-size: 40px;
+    }
+
+    h2{
+        font-size: 20px;
+    }
+
+    .results-section {
+        padding-top: 0;
+    }
+
+    .additional-info {
+        padding-top: 0px;
     }
 }

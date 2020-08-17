@@ -56,6 +56,11 @@ h6 {font-size: 16px;}
     margin: 0 auto;
 }
 
+.login-wrapper {
+    color: white;
+    background-color: white;
+}
+
 .primary-btn {
     background: var(--primaryBtn);
     color: white;
