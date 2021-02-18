@@ -17,6 +17,9 @@ Select delete interest.
 Prerequisites
 No special hardware or software is required to use this web app. All you need is a modern browser.
 
+Running the tests
+Basic functionality testing to make sure search feature works and drop down menu is functional.
+
 
 Deployment
 modernmediamichael.github.io/firstproject/
