@@ -1,38 +1,21 @@
-# Facebook Interest Finder
-
-# Facebook Interest Finder
-
-Facebook Interest Finder.
+# Facebook Hidden Audience Finder
+ 
  
 Project uses the Facebook api to get all of the data back from keyword searches and display them for the user, as well as allow them to filter their search by audience size for better targeting.
 
 Getting Started
-These instructions will get you a copy of the project up and running on your local machine for development and testing purposes. See deployment for notes on how to deploy the project on a live system.
+Navigate to the landing page (https://modernmediamichael.github.io/firstproject/).
+Enter a topic to search for.
+Select audiece size in the drop down menu.
+Click the search icon.
+View populated interests.
+Select save interest.
+View saved interest.
+Select delete interest.
+
 
 Prerequisites
-What things you need to install the software and how to install them
-
-Give examples
-Installing
-A step by step series of examples that tell you how to get a development env running
-
-Say what the step will be
-
-Give the example
-And repeat
-
-until finished
-End with an example of getting some data out of the system or using it for a little demo
-
-Running the tests
-Explain how to run the automated tests for this system
-
-Break down into end to end tests
-Explain what these tests test and why
-
-Give an example
-And coding style tests
-Explain what these tests test and why
+No special hardware or software is required to use this web app. All you need is a modern browser.
 
 
 Deployment
@@ -55,4 +38,4 @@ License
 This project is licensed under the MIT License 
 
 Acknowledgments
-Nelio Contrera
+Nelio Contrera my instructor was helpful in completing this project.
